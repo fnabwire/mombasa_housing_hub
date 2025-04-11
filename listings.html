@@ -5,216 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Housing Listings - Mombasa Transition Housing Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-          integrity="sha512-xodZBNTC5n17Xt2atTPvknHGJwWtJx79gg6IzLgaAvhPDG+LRkpOYJlIKzPVLuonz19nzgme3YcNGA5EETrPrw=="
-          crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-XQoYMMLkQiMQHzIJEnwyolPvsdnoKGjIK5y72hovUkVzj/aPUWwxBnv1jh0/pBnGcZCTA+cEjhtyBFeVtWWcA=="
-            crossorigin=""></script>
-    <style>
-        #map { height: 300px; margin-top: 1rem; border-radius: 0.5rem; }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gray-100 font-sans">
     <header class="bg-blue-500 text-white py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Mombasa Housing Hub</h1>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="index.html" class="hover:text-indigo-200"><i class="fas fa-home mr-1"></i> Home</a></li>
-                    <li><a href="listings.html" class="hover:text-indigo-200"><i class="fas fa-list mr-1"></i> Housing</a></li>
-                    <li><a href="ecoliving.html" class="hover:text-indigo-200"><i class="fas fa-leaf mr-1"></i> Eco-Living</a></li>
-                    <li><a href="community.html" class="hover:text-indigo-200"><i class="fas fa-comments mr-1"></i> Community</a></li>
-                </ul>
-            </nav>
+        <div class="container mx-auto px-4">
+            <h1 class="text-2xl font-bold">House Listings</h1>
+            <p class="text-sm">Find Your Temporary Home in Mombasa</p>
         </div>
     </header>
 
-    
+    <nav class="bg-gray-200 py-2">
+        <div class="container mx-auto px-4">
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+                <li><a href="listings.html" class="hover:text-blue-500">Housing Listings</a></li>
+                <li><a href="community.html" class="hover:text-blue-500">Eco-Living</a></li>
+                <li><a href="ecoliving.html" class="hover:text-blue-500">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main class="container mx-auto py-8 px-4">
         <section class="mb-8">
-            <h2 class="text-xl font-semibold mb-4">Find Your Ideal Temporary Housing</h2>
-            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                <h3 class="text-lg font-semibold mb-3">Filter Options</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                        <label for="neighborhood" class="block text-gray-700 text-sm font-bold mb-2">Neighborhood:</label>
-                        <select id="neighborhood" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option value="">All Neighborhoods</option>
-                            <option value="Nyali">Nyali</option>
-                            <option value="Kisauni">Kisauni</option>
-                            <option value="Mtwapa">Mtwapa</option>
-                            <option value="Bamburi">Bamburi</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="price" class="block text-gray-700 text-sm font-bold mb-2">Max Price (Ksh):</label>
-                        <input type="number" id="price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="e.g., 10000">
-                    </div>
-                    <div>
-                        <label for="type" class="block text-gray-700 text-sm font-bold mb-2">Type:</label>
-                        <select id="type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option value="">All Types</option>
-                            <option value="shared">Shared</option>
-                            <option value="bedsitter">Bedsitter</option>
-                            <option value="one-bedroom">One-Bedroom</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2">Amenities:</label>
-                        <label class="inline-flex items-center mr-4">
-                            <input type="checkbox" id="verified" class="form-checkbox h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                            <span class="ml-2 text-gray-700">Verified Landlord</span>
-                        </label>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" id="ecoCertified" class="form-checkbox h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
-                            <span class="ml-2 text-gray-700">Eco-Certified</span>
-                        </label>
-                    </div>
-                    <div class="md:col-span-3">
-                        <button id="filterListings" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Filter Listings</button>
-                        <button id="resetFilters" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2">Reset Filters</button>
+            <h2 class="text-xl font-semibold mb-4">Available Housing</h2>
+            <p>Browse our current listings of affordable short-term housing options in Mombasa.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+                <div class="modal-body">
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <h3 class="font-semibold text-lg mb-2">Bedsitter in Nyali</h3>
+                        <img src="images/bedsitter.jpg" alt="Shared Room in Kisauni" class="rounded mb-2">
+                        <p class="text-gray-700 mb-1">Price: Ksh 7,000/month</p>
+                        <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                        <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Nyali</p>
+                        <button data-modal-id="modal-1" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
                     </div>
                 </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="font-semibold text-lg mb-2">Shared Room in Kisauni</h3>
+                    <img src="images/2br.jpeg" alt="Shared Room in Kisauni" class="rounded mb-2">
+                    <p class="text-gray-700 mb-1">Price: Ksh 3,500/month</p>
+                    <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                    <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kisauni</p>
+                    <button data-modal-id="modal-2" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="font-semibold text-lg mb-2">One bedroom in Bamburi</h3>
+                    <img src="images/1br.jpg" alt="One bedroom in Bamburi" class="rounded mb-2">
+                    <p class="text-gray-700 mb-1">Price: Ksh 9,000/month</p>
+                    <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                    <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Bamburi</p>
+                    <button data-modal-id="modal-3" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+                </div>
+
             </div>
-
-            <h2 class="text-xl font-semibold mb-4">Available Housing</h2>
-            <div id="housingListings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                <p class="text-gray-500 col-span-full text-center">Loading listings...</p>
-            </div>
-
-            <div id="map" class="mt-6"></div>
-
         </section>
+
     </main>
 
     <footer class="bg-gray-300 py-4 text-center text-gray-700">
-        <p>&copy; 2025 Mombasa Transition Housing Hub</p>
+        <p>&copy; 2025 Mombasa Transition Housing Hub. All rights reserved</p>
     </footer>
 
+    <div id="modal-1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white rounded-lg p-6 relative">
+            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="font-semibold text-lg mb-2">Bedsitter in Nyali</h3>
+            <img src="images/bedsitter.jpg" alt="Bedsitter in Nyali" class="rounded mb-2">
+            <p class="text-gray-700 mb-1">Price: Ksh 7,000/month</p>
+            <p class="text-gray-700 mb-1">Availability: Immediate</p>
+            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Nyali</p>
+            <br>
+           <p class="text-gray-700 mb-1">Amenities:</p>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <i class="fas fa-tint"> Adequate water</i>
+            <i class="fas fa-wifi"> Wi-Fi provider</i>
+            <i class="fas fa-utensils"> Kitchenette</i>
+            <i class="fas fa-bath"> Private bathroom</i>
+            <i class="fas fa-parking"> Available Parking</i>
+            <i class="fas fa-trash"> Weekly garbage collection</i>
+       </div>
+    </div>
+
+    <div id="modal-2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white rounded-lg p-6 relative">
+            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="font-semibold text-lg mb-2">Shared Room in Kisauni</h3>
+            <img src="images/2br.jpeg" alt="Shared Room in Kisauni" class="rounded mb-2">
+            <p class="text-gray-700 mb-1">Price: Ksh 3,500/month</p>
+            <p class="text-gray-700 mb-1">Availability: Immediate</p>
+            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kisauni</p>
+            <br>
+           <p class="text-gray-700 mb-1">Amenities:</p>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <i class="fas fa-tint"> Adequate water</i>
+            <i class="fas fa-wifi"> Wi-Fi provider</i>
+            <i class="fas fa-utensils"> Kitchenette</i>
+            <i class="fas fa-bath"> Private bathroom</i>
+            <i class="fas fa-parking"> Available Parking</i>
+            <i class="fas fa-trash"> Weekly garbage collection</i>
+        </div>
+    </div>
+
+    <div id="modal-3" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white rounded-lg p-6 relative">
+            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="font-semibold text-lg mb-2">One bedroom in Bamburi</h3>
+            <img src="images/1br.jpg" alt="One bedroom in Bamburi" class="rounded mb-2">
+            <p class="text-gray-700 mb-1">Price: Ksh 9,000/month</p>
+            <p class="text-gray-700 mb-1">Availability: Immediate</p>
+            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Bamburi</p>
+            <br>
+           <p class="text-gray-700 mb-1">Amenities:</p>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <i class="fas fa-tint"> Adequate water</i>
+            <i class="fas fa-wifi"> Wi-Fi provider</i>
+            <i class="fas fa-utensils"> Kitchenette</i>
+            <i class="fas fa-bath"> Private bathroom</i>
+            <i class="fas fa-parking"> Available Parking</i>
+            <i class="fas fa-trash"> Weekly garbage collection</i>
+        </div>
+    </div>
+
     <script>
-        const housingListingsContainer = document.getElementById('housingListings');
-        const neighborhoodFilter = document.getElementById('neighborhood');
-        const priceFilter = document.getElementById('price');
-        const typeFilter = document.getElementById('type');
-        const verifiedFilter = document.getElementById('verified');
-        const ecoCertifiedFilter = document.getElementById('ecoCertified');
-        const filterButton = document.getElementById('filterListings');
-        const resetButton = document.getElementById('resetFilters');
-        const mapDiv = document.getElementById('map');
-        let map;
-        let markers = [];
-        let allListingsData = []; // To store the fetched data
+        const openModalButtons = document.querySelectorAll('.openModal');
+        const closeModalButtons = document.querySelectorAll('.closeModal');
+        const modals = document.querySelectorAll('.modal');
 
-        // Function to initialize the map
-        function initMap() {
-            map = L.map('map').setView([-4.05, 39.6667], 12); // Mombasa coordinates, zoom level 12
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-        }
-
-        // Function to add markers to the map
-        function addMarkersToMap(listings) {
-            // Clear existing markers
-            markers.forEach(marker => map.removeLayer(marker));
-            markers = [];
-
-            listings.forEach(listing => {
-                // Replace with actual latitude and longitude if available in your data
-                // For now, let's use some approximate locations based on neighborhood
-                let lat, lng;
-                switch (listing.neighborhood) {
-                    case 'Nyali': lat = -4.03; lng = 39.70; break;
-                    case 'Kisauni': lat = -3.95; lng = 39.63; break;
-                    case 'Mtwapa': lat = -3.93; lng = 39.74; break;
-                    case 'Bamburi': lat = -3.98; lng = 39.66; break;
-                    default: lat = -4.05; lng = 39.6667;
-                }
-
-                const marker = L.marker([lat, lng]).addTo(map);
-                marker.bindPopup(`<b>${listing.type} in ${listing.neighborhood}</b><br>Price: Ksh ${listing.price}`);
-                markers.push(marker);
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modalId = button.dataset.modalId;
+                const modal = document.getElementById(modalId);
+                modal.classList.remove('hidden');
             });
-        }
-
-        // Function to render a single housing listing
-        function renderListing(listing) {
-            const div = document.createElement('div');
-            div.classList.add('bg-white', 'rounded-lg', 'shadow-md', 'p-4');
-            let verifiedBadge = listing.verified ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Verified</span>' : '';
-            let ecoBadge = listing.ecoCertified ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-lime-100 text-lime-800 ml-1">Eco</span>' : '';
-
-            div.innerHTML = `
-                <h3 class="font-semibold text-lg mb-2">${listing.type} in ${listing.neighborhood} ${verifiedBadge} ${ecoBadge}</h3>
-                <img src="${listing.image}" alt="${listing.type}" class="w-full h-32 object-cover rounded-md mb-2">
-                <p class="text-gray-700 mb-1">Price: Ksh ${listing.price}/month</p>
-                <p class="text-gray-700 mb-1">Availability: ${listing.availability}</p>
-                <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> ${listing.neighborhood}</p>
-                <p class="text-gray-700"><span class="font-bold">Near:</span> ${listing.landmarks.join(', ')}</p>
-                <a href="#" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</a>
-            `;
-            return div;
-        }
-
-        // Function to display the housing listings
-        function displayListings(listings) {
-            housingListingsContainer.innerHTML = ''; // Clear previous listings
-            if (listings.length === 0) {
-                housingListingsContainer.innerHTML = '<p class="text-gray-500 col-span-full text-center">No listings found matching your criteria.</p>';
-            } else {
-                listings.forEach(listing => {
-                    housingListingsContainer.appendChild(renderListing(listing));
-                });
-            }
-            addMarkersToMap(listings); // Update map markers
-        }
-
-        // Function to filter listings
-        function filterListings() {
-            const selectedNeighborhood = neighborhoodFilter.value;
-            const maxPrice = parseFloat(priceFilter.value) || Infinity;
-            const selectedType = typeFilter.value;
-            const isVerified = verifiedFilter.checked;
-            const isEcoCertified = ecoCertifiedFilter.checked;
-
-            const filteredListings = allListingsData.filter(listing => {
-                const neighborhoodMatch = !selectedNeighborhood || listing.neighborhood === selectedNeighborhood;
-                const priceMatch = listing.price <= maxPrice;
-                const typeMatch = !selectedType || listing.type === selectedType;
-                const verifiedMatch = !isVerified || listing.verified === isVerified;
-                const ecoCertifiedMatch = !isEcoCertified || listing.ecoCertified === isEcoCertified;
-
-                return neighborhoodMatch && priceMatch && typeMatch && verifiedMatch && ecoCertifiedMatch;
-            });
-
-            displayListings(filteredListings);
-        }
-
-        // Event listeners
-        filterButton.addEventListener('click', filterListings);
-        resetButton.addEventListener('click', () => {
-            neighborhoodFilter.value = '';
-            priceFilter.value = '';
-            typeFilter.value = '';
-            verifiedFilter.checked = false;
-            ecoCertifiedFilter.checked = false;
-            displayListings(allListingsData); // Show all listings
         });
 
-        // Fetch and display initial listings
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                allListingsData = data;
-                displayListings(data);
-                initMap(); // Initialize the map after fetching data
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-                housingListingsContainer.innerHTML = '<p class="text-red-500 col-span-full text-center">Failed to load listings.</p>';
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                modal.classList.add('hidden');
             });
+        });
+
+        window.addEventListener('click', (event) => {
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
     </script>
 </body>
 </html>
