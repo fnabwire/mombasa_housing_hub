@@ -6,17 +6,32 @@
     <title>Community - Mombasa Transition Housing Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .primary-blue {
+            background-color: #3B82F6;
+        }
+        .primary-blue:hover {
+            background-color: #2c69d1;
+        }
+        .secondary-blue {
+            background-color: #60a5fa;
+            color: #1e3a8a;
+        }
+        .secondary-blue:hover {
+            background-color: #4381dc;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <header class="bg-indigo-500 text-white py-6">
+    <header class="primary-blue text-white py-6">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold"><i class="fas fa-users mr-2"></i> Community Hub</h1>
             <nav>
                 <ul class="flex space-x-4">
-                    <li><a href="index.html" class="hover:text-indigo-200"><i class="fas fa-home mr-1"></i> Home</a></li>
-                    <li><a href="listings.html" class="hover:text-indigo-200"><i class="fas fa-list mr-1"></i> Housing</a></li>
-                    <li><a href="ecoliving.html" class="hover:text-indigo-200"><i class="fas fa-leaf mr-1"></i> Eco-Living</a></li>
-                    <li><a href="community.html" class="hover:text-indigo-200"><i class="fas fa-comments mr-1"></i> Community</a></li>
+                    <li><a href="index.html" class="hover:text-blue-200"><i class="fas fa-home mr-1"></i> Home</a></li>
+                    <li><a href="listings.html" class="hover:text-blue-200"><i class="fas fa-list mr-1"></i> Housing</a></li>
+                    <li><a href="ecoliving.html" class="hover:text-blue-200"><i class="fas fa-leaf mr-1"></i> Eco-Living</a></li>
+                    <li><a href="community.html" class="hover:text-blue-200"><i class="fas fa-comments mr-1"></i> Community</a></li>
                 </ul>
             </nav>
         </div>
@@ -24,12 +39,12 @@
 
     <main class="container mx-auto py-8 px-4">
         <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-6 text-indigo-700"><i class="fas fa-bullhorn mr-2"></i> Share Your Voice</h2>
+            <h2 class="text-2xl font-semibold mb-6 text-blue-700"><i class="fas fa-bullhorn mr-2"></i> Share Your Voice</h2>
             <p class="mb-4 text-gray-700">Connect with fellow newcomers and long-term residents. Share your housing experiences and help build a supportive community.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="font-semibold text-lg mb-4 text-indigo-600"><i class="fas fa-star-half-alt mr-2"></i> Leave a Housing Review</h3>
+                    <h3 class="font-semibold text-lg mb-4 text-blue-600"><i class="fas fa-star-half-alt mr-2"></i> Leave a Housing Review</h3>
                     <form>
                         <div class="mb-4">
                             <label for="housingId" class="block text-gray-700 text-sm font-bold mb-2">Housing (e.g., "Bedsitter near City Mall"):</label>
@@ -43,7 +58,7 @@
                             <label for="reviewText" class="block text-gray-700 text-sm font-bold mb-2">Your Review:</label>
                             <textarea id="reviewText" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                         </div>
-                        <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-paper-plane mr-2"></i> Submit Review</button>
+                        <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-paper-plane mr-2"></i> Submit Review</button>
                     </form>
                 </div>
 
@@ -68,7 +83,7 @@
                             <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
                             <textarea id="description" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                         </div>
-                        <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-flag mr-2"></i> Submit Report</button>
+                        <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-flag mr-2"></i> Submit Report</button>
                     </form>
                 </div>
             </div>
@@ -82,17 +97,17 @@
                 <div class="mb-6 p-4 border rounded-md bg-gray-50">
                     <p class="font-semibold text-gray-800">Local Tip: Use reusable bags at the market!</p>
                     <p class="text-gray-600 text-sm">Shared by Aisha on April 10, 2025</p>
-                    <button class="bg-indigo-300 hover:bg-indigo-400 text-indigo-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-thumbs-up mr-1"></i> 5 Likes</button>
+                    <button class="secondary-blue font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-thumbs-up mr-1"></i> 5 Likes</button>
                 </div>
                 <div class="mb-6 p-4 border rounded-md bg-gray-50">
                     <p class="font-semibold text-gray-800">DIY Idea: Turn old t-shirts into cleaning cloths.</p>
                     <p class="text-gray-600 text-sm">Shared by Juma on April 9, 2025</p>
-                    <button class="bg-indigo-300 hover:bg-indigo-400 text-indigo-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-thumbs-up mr-1"></i> 12 Likes</button>
+                    <button class="secondary-blue font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-thumbs-up mr-1"></i> 12 Likes</button>
                 </div>
                 </div>
 
-            <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"><i class="fas fa-eye mr-2"></i> View More Hacks</button>
-            <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 ml-2"><i class="fas fa-plus mr-2"></i> Share Your Hack</button>
+            <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"><i class="fas fa-eye mr-2"></i> View More Hacks</button>
+            <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 ml-2"><i class="fas fa-plus mr-2"></i> Share Your Hack</button>
         </section>
 
         <section class="bg-white rounded-lg shadow-md p-6">
@@ -102,11 +117,11 @@
                 <div class="mb-4 p-3 border rounded-md bg-blue-50">
                     <p class="font-semibold text-blue-800">Where can I find affordable transport?</p>
                     <p class="text-gray-600 text-sm">Asked by Sarah on April 11, 2025</p>
-                    <button class="bg-indigo-300 hover:bg-indigo-400 text-indigo-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-reply mr-1"></i> 3 Replies</button>
+                    <button class="secondary-blue font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-sm mt-2"><i class="fas fa-reply mr-1"></i> 3 Replies</button>
                 </div>
                 </div>
-            <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"><i class="fas fa-list-ul mr-2"></i> View All Q&A</button>
-            <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 ml-2"><i class="fas fa-question mr-2"></i> Ask a Question</button>
+            <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"><i class="fas fa-list-ul mr-2"></i> View All Q&A</button>
+            <button class="primary-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 ml-2"><i class="fas fa-question mr-2"></i> Ask a Question</button>
         </section>
 
     </main>
