@@ -1,4 +1,4 @@
-# 🏙️ Mombasa Transition Housing Hub
+# 🏙️ Mombasa  Housing Hub
 
 A community-focused website that helps new residents in Mombasa find affordable, short-term housing while promoting sustainable urban living and eco-friendly waste management practices.
 
