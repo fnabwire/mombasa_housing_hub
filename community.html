@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - Mombasa Transition Housing Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-indigo-500 text-white py-4">
+        <div class="container mx-auto px-4">
+            <h1 class="text-2xl font-bold">Community</h1>
+            <p class="text-sm">Share Experiences, Report Issues, and Connect with Locals</p>
+        </div>
+    </header>
+
+    <nav class="bg-gray-200 py-2">
+        <div class="container mx-auto px-4">
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:text-indigo-500">Home</a></li>
+                <li><a href="listings.html" class="hover:text-indigo-500">Housing Listings</a></li>
+                <li><a href="ecoliving.html" class="hover:text-indigo-500">Eco-Living</a></li>
+                <li><a href="community.html" class="hover:text-indigo-500">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-8 px-4">
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Leave a Review</h2>
+            <p class="mb-4">Share your experiences with temporary housing in Mombasa to help other newcomers.</p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <form>
+                    <div class="mb-4">
+                        <label for="housingId" class="block text-gray-700 text-sm font-bold mb-2">Housing (e.g., Bedsitter in Nyali):</label>
+                        <input type="text" id="housingId" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter housing description">
+                    </div>
+                    <div class="mb-4">
+                        <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">Rating (1-5):</label>
+                        <input type="number" id="rating" min="1" max="5" class="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4">
+                        <label for="reviewText" class="block text-gray-700 text-sm font-bold mb-2">Your Review:</label>
+                        <textarea id="reviewText" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    </div>
+                    <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit Review</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Report a Problem</h2>
+            <p class="mb-4">Help us improve the living environment by reporting any issues you encounter (e.g., trash pile-up, unsafe building, noise complaints).</p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <form>
+                    <div class="mb-4">
+                        <label for="location" class="block text-gray-700 text-sm font-bold mb-2">Location:</label>
+                        <input type="text" id="location" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter specific location">
+                    </div>
+                    <div class="mb-4">
+                        <label for="problemType" class="block text-gray-700 text-sm font-bold mb-2">Type of Problem:</label>
+                        <select id="problemType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Select Problem Type</option>
+                            <option value="trash">Trash Pile-Up</option>
+                            <option value="safety">Unsafe Building Condition</option>
+                            <option value="noise">Noise Complaint</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
+                        <textarea id="description" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    </div>
+                    <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit Report</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Sustainable Living Hacks (Blog/Mini-Forum)</h2>
+            <p class="mb-4">Share and discover tips for sustainable living in Mombasa.</p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="font-semibold mb-2">Recent Posts</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><a href="#" class="text-indigo-500 hover:underline">Water Conservation Tips for Your Home</a></li>
+                    <li><a href="#" class="text-indigo-500 hover:underline">Where to Buy Local and Sustainable Produce</a></li>
+                    <li><a href="#" class="text-indigo-500 hover:underline">Easy DIY Compost Bin Ideas</a></li>
+                </ul>
+                <button class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">View More Hacks</button>
+                <button class="bg-indigo-300 hover:bg-indigo-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 ml-2">Share Your Hack</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-300 py-4 text-center text-gray-700">
+        <p>&copy; 2025 Mombasa Transition Housing Hub</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mombasa Transition Housing Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Styles for Hero Section Background */
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1568605114967-8130f1769633?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2l0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60'); /* Replace with an actual image of Mombasa */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay; /* Optional: Add a color overlay */
+            background-color: rgba(0, 0, 0, 0.3); /* Optional: Overlay color */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-500 text-white py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Mombasa Housing Hub</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-blue-200">Home</a></li>
+                    <li><a href="listings.html" class="hover:text-blue-200">Housing</a></li>
+                    <li><a href="ecoliving.html" class="hover:text-blue-200">Eco-Living</a></li>
+                    <li><a href="community.html" class="hover:text-blue-200">Community</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8 px-4">
+        <section class="hero-bg py-20 rounded-lg shadow-md text-center text-white mb-8">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-4">A Warm Welcome to Mombasa</h2>
+                <p class="text-lg mb-8">Your Gateway to Comfortable Temporary Housing and Sustainable Living.</p>
+                <a href="listings.html" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full text-lg">Find Your Housing</a>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-800">Our Core Pillars</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-md p-6 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.226-.227.596-.227.822 0l8.954 8.955c.226.227.226.597 0 .823L12 21.75l-8.955-8.954c-.227-.226-.227-.596 0-.822z" />
+                    </svg>
+                    <h3 class="font-semibold text-xl mb-2">Affordable Housing</h3>
+                    <p class="text-gray-200">Discover a wide range of budget-friendly, short-term housing options across Mombasa.</p>
+                    <a href="listings.html" class="inline-block mt-4 text-blue-200 hover:text-white">Explore Listings <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 inline-block ml-1">
+                        <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                      </svg></a>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-md p-6 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h8.25A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75a2.25 2.25 0 002.25-2.25V5.25a2.25 2.25 0 00-2.25-2.25h-3a2.25 2.25 0 00-2.25 2.25v13.5a2.25 2.25 0 002.25 2.25h3z" />
+                    </svg>
+                    <h3 class="font-semibold text-xl mb-2">Sustainable Living</h3>
+                    <p class="text-gray-200">Access resources, tips, and community initiatives to embrace an eco-friendly lifestyle in Mombasa.</p>
+                    <a href="ecoliving.html" class="inline-block mt-4 text-green-200 hover:text-white">Learn More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 inline-block ml-1">
+                        <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                      </svg></a>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-lg shadow-md p-6 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.306 3 12s4.03 8.25 9 8.25z" />
+                    </svg>
+                    <h3 class="font-semibold text-xl mb-2">Community Connection</h3>
+                    <p class="text-gray-200">Connect with fellow newcomers and long-term residents, share experiences, and find support.</p>
+                    <a href="community.html" class="inline-block mt-4 text-indigo-200 hover:text-white">Join the Community <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 inline-block ml-1">
+                        <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.5a.75.75 0 01-1.5 0V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+                      </svg></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-gray-200 rounded-lg shadow-md">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Ready to Find Your New Home?</h2>
+                <p class="text-gray-700 mb-8">Browse our updated listings and start your smooth transition to Mombasa today!</p>
+                <a href="listings.html" class="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full text-lg">View All Listings</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-300 py-4 text-center text-gray-700 mt-8">
+        <p>&copy; 2025 Mombasa Transition Housing Hub</p>
+    </footer>
+</body>
+</html>
