@@ -36,174 +36,273 @@
             </nav>
         </div>
     </header>
+<style>
+    body {
+        background-image: url('images/background.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Keeps background fixed while scrolling */
+        position: relative; /* Needed for overlay */
+    }
 
-    <style>
-        body {
-            background-image: url('images/background.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed; /* Keeps background fixed while scrolling */
-            position: relative; /* Needed for overlay */
-        }
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(214, 208, 208, 0.83); /* Black with 50% opacity */
+        z-index: -1; /* Place overlay behind content */
+    }
+</style>
 
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(214, 208, 208, 0.83); /* Black with 50% opacity */
-            z-index: -1; /* Place overlay behind content */
-        }
-    </style>
+<main class="container mx-auto py-8 px-4">
+    <section class="mb-8">
+        <h2 class="text-xl font-semibold mb-4">Available Housing</h2>
+        <p>Browse our current listings of affordable short-term housing options in Mombasa.</p>
 
-</head>
-<body class="bg-gray-100 font-sans">
-    <main class="container mx-auto py-8 px-4">
-        <section class="mb-8">
-            <h2 class="text-xl font-semibold mb-4">Available Housing</h2>
-            <p>Browse our current listings of affordable short-term housing options in Mombasa.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-
-                <div class="modal-body">
-                    <div class="bg-white rounded-lg shadow-md p-4">
-                        <h3 class="font-semibold text-lg mb-2">Bedsitter in Nyali</h3>
-                        <img src="images/bedsitter.jpg" alt="Shared Room in Kisauni" class="rounded mb-2">
-                        <p class="text-gray-700 mb-1">Price: Ksh 7,000/month</p>
-                        <p class="text-gray-700 mb-1">Availability: Immediate</p>
-                        <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Nyali</p>
-                        <button data-modal-id="modal-1" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
-                    </div>
-                </div>
-
+            <div class="modal-body">
                 <div class="bg-white rounded-lg shadow-md p-4">
-                    <h3 class="font-semibold text-lg mb-2">Shared Room in Kisauni</h3>
-                    <img src="images/2br.jpeg" alt="Shared Room in Kisauni" class="rounded mb-2">
-                    <p class="text-gray-700 mb-1">Price: Ksh 3,500/month</p>
+                    <h3 class="font-semibold text-lg mb-2">Bedsitter in Majengo </h3>
+                    <img src="images/bedsitter.jpg" alt="Shared Room in Majengo" class="rounded mb-2">
+                    <p class="text-gray-700 mb-1">Price: Ksh 1,000/month</p>
                     <p class="text-gray-700 mb-1">Availability: Immediate</p>
-                    <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kisauni</p>
-                    <button data-modal-id="modal-2" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+                    <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Majengo </p>
+                    <button data-modal-id="modal-1" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
                 </div>
-
-                <div class="bg-white rounded-lg shadow-md p-4">
-                    <h3 class="font-semibold text-lg mb-2">One bedroom in Bamburi</h3>
-                    <img src="images/1br.jpg" alt="One bedroom in Bamburi" class="rounded mb-2">
-                    <p class="text-gray-700 mb-1">Price: Ksh 9,000/month</p>
-                    <p class="text-gray-700 mb-1">Availability: Immediate</p>
-                    <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Bamburi</p>
-                    <button data-modal-id="modal-3" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
-                </div>
-
             </div>
-        </section>
 
-    </main>
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="font-semibold text-lg mb-2">Shared Room in Kisauni</h3>
+                <img src="images/majengo.jpg" alt="Shared Room in Kisauni" class="rounded mb-2">
+                <p class="text-gray-700 mb-1">Price: Ksh 2,000/month</p>
+                <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kisauni</p>
+                <button data-modal-id="modal-2" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+            </div>
 
-    <footer class="bg-gray-300 py-4 text-center text-gray-700 mt-8">
-        <p>&copy; 2025 Mombasa Transition Housing Hub</p>
-    </footer>
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="font-semibold text-lg mb-2">One bedroom in Shimanzi</h3>
+                <img src="images/shimanzi.jpg" alt="One bedroom in Shimanzi" class="rounded mb-2">
+                <p class="text-gray-700 mb-1">Price: Ksh 3,500/month</p>
+                <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Shimanzi</p>
+                <button data-modal-id="modal-3" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+            </div>
 
-    <div id="modal-1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
-        <div class="bg-white rounded-lg p-6 relative">
-            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <h3 class="font-semibold text-lg mb-2">Bedsitter in Nyali</h3>
-            <img src="images/bedsitter.jpg" alt="Bedsitter in Nyali" class="rounded mb-2">
-            <p class="text-gray-700 mb-1">Price: Ksh 7,000/month</p>
-            <p class="text-gray-700 mb-1">Availability: Immediate</p>
-            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Nyali</p>
-            <br>
-           <p class="text-gray-700 mb-1">Amenities:</p>
-            <ul><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-               <li class="text-sm font-normal mb-1"><i class="fa fa-tint"> Adequate water</i></li>
-               <li class="text-sm font-normal mb-1"><i class="fa-solid fa-wifi"> Wi-Fi provider</i></li>
-               <li class="text-sm font-normal mb-1"><i class="fa-solid fa-sink"> Kitchenette</i></li>
-               <li class="text-sm font-normal mb-1"><i class="fa-solid fa-bath"> Private bathroom</i></li>
-               <li class="text-sm font-normal mb-1"><i class="fa-solid fa-trash"> Weekly garbage collection</i></li>
-            </ul>   
-       </div>
-    </div>
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="font-semibold text-lg mb-2">Bedistter in Mikindani</h3>
+                <img src="images/1br.jpg" alt="Bedsitter in Mikindani" class="rounded mb-2">
+                <p class="text-gray-700 mb-1">Price: Ksh 1,500/month</p>
+                <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Mikindani</p>
+                <button data-modal-id="modal-1" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+            </div>
 
-    <div id="modal-2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
-        <div class="bg-white rounded-lg p-6 relative">
-            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <h3 class="font-semibold text-lg mb-2">Shared Room in Kisauni</h3>
-            <img src="images/2br.jpeg" alt="Shared Room in Kisauni" class="rounded mb-2">
-            <p class="text-gray-700 mb-1">Price: Ksh 3,500/month</p>
-            <p class="text-gray-700 mb-1">Availability: Immediate</p>
-            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kisauni</p>
-            <br>
-            <p class="text-gray-700 mb-1">Amenities:</p>
-            <ul><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-               <li><i class="fa fa-tint" aria-hidden="true"> Adequate water</i></li>
-               <li><i class="fa-solid fa-wifi"> Wi-Fi provider</i></li>
-               <li><i class="fa-solid fa-sink"> Kitchenette</i></li>
-               <li><i class="fa-solid fa-bath"> Private bathroom</i></li>
-               <li><i class="fa-solid fa-trash"> Weekly garbage collection</i></li>
-            </ul> 
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="font-semibold text-lg mb-2">One bedroom in Makupa</h3>
+                <img src="images/2br.jpeg" alt="One bedroom in Makupa" class="rounded mb-2">
+                <p class="text-gray-700 mb-1">Price: Ksh 4,500/month</p>
+                <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Makupa</p>
+                <button data-modal-id="modal-2" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="font-semibold text-lg mb-2">Shared Room in Kibokoni</h3>
+                <img src="images/kibokoni.jpg" alt="Shared Room in Kibokoni" class="rounded mb-2">
+                <p class="text-gray-700 mb-1">Price: Ksh 800/month</p>
+                <p class="text-gray-700 mb-1">Availability: Immediate</p>
+                <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kibokoni</p>
+                <button data-modal-id="modal-3" class="openModal inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Details</button>
+            </div>
+
         </div>
+    </section>
+
+</main>
+
+<footer class="bg-gray-300 py-4 text-center text-gray-700 mt-8">
+    <p>© 2025 Mombasa Transition Housing Hub</p>
+</footer>
+
+<div id="modal-1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+    <div class="bg-white rounded-lg p-6 relative">
+        <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h3 class="font-semibold text-lg mb-2">Bedsitter in Majengo</h3>
+        <img src="images/bedsitter.jpg" alt="Bedsitter in Majengo" class="rounded mb-2">
+        <p class="text-gray-700 mb-1">Price: Ksh 1,000/month</p>
+        <p class="text-gray-700 mb-1">Availability: Immediate</p>
+        <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Majengo</p>
+        <br>
+        <p class="text-gray-700 mb-1">Amenities:</p>
+        <ul><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            <li class="text-sm font-normal mb-1"><i class="fa fa-tint"> Adequate water</i></li>
+            <li class="text-sm font-normal mb-1"><i class="fa-solid fa-wifi"> Wi-Fi provider</i></li>
+            <li class="text-sm font-normal mb-1"><i class="fa-solid fa-sink"> Kitchenette</i></li>
+            <li class="text-sm font-normal mb-1"><i class="fa-solid fa-bath"> Private bathroom</i></li>
+            <li class="text-sm font-normal mb-1"><i class="fa-solid fa-trash"> Weekly garbage collection</i></li>
+        </ul>
     </div>
+</div>
 
-    <div id="modal-3" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
-        <div class="bg-white rounded-lg p-6 relative">
-            <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <h3 class="font-semibold text-lg mb-2">One bedroom in Bamburi</h3>
-            <img src="images/1br.jpg" alt="One bedroom in Bamburi" class="rounded mb-2">
-            <p class="text-gray-700 mb-1">Price: Ksh 9,000/month</p>
-            <p class="text-gray-700 mb-1">Availability: Immediate</p>
-            <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Bamburi</p>
-            <br>
-            <p class="text-gray-700 mb-1">Amenities:</p>
-            <ul><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-               <li><i class="fa fa-tint" aria-hidden="true"> Adequate water</i></li>
-               <li><i class="fa-solid fa-wifi"> Wi-Fi provider</i></li>
-               <li><i class="fa-solid fa-sink"> Kitchenette</i></li>
-               <li><i class="fa-solid fa-bath"> Private bathroom</i></li>
-               <li><i class="fa-solid fa-trash"> Weekly garbage collection</i></li>
-            </ul> 
-        </div>
+<div id="modal-2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+    <div class="bg-white rounded-lg p-6 relative">
+        <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h3 class="font-semibold text-lg mb-2">Shared Room in Kisauni</h3>
+        <img src="images/2br.jpeg" alt="Shared Room in Kisauni" class="rounded mb-2">
+        <p class="text-gray-700 mb-1">Price: Ksh 2,000/month</p>
+        <p class="text-gray-700 mb-1">Availability: Immediate</p>
+        <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Kisauni</p>
+        <br>
+        <p class="text-gray-700 mb-1">Amenities:</p>
+        <ul><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            <li><i class="fa fa-tint" aria-hidden="true"> Adequate water</i></li>
+            <li><i class="fa-solid fa-wifi"> Wi-Fi provider</i></li>
+            <li><i class="fa-solid fa-sink"> Kitchenette</i></li>
+            <li><i class="fa-solid fa-bath"> Private bathroom</i></li>
+            <li><i class="fa-solid fa-trash"> Weekly garbage collection</i></li>
+        </ul>
     </div>
+</div>
 
-    <script>
-        const openModalButtons = document.querySelectorAll('.openModal');
-        const closeModalButtons = document.querySelectorAll('.closeModal');
-        const modals = document.querySelectorAll('.modal');
+<div id="modal-3" class="modal fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center">
+    <div class="bg-white rounded-lg p-6 relative">
+        <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h3 class="font-semibold text-lg mb-2">One bedroom in Shimanzi</h3>
+        <img src="images/1br.jpg" alt="One bedroom in Shimanzi" class="rounded mb-2">
+        <p class="text-gray-700 mb-1">Price: Ksh 3,500/month</p>
+        <p class="text-gray-700 mb-1">Availability: Immediate</p>
+        <p class="text-gray-700"><span class="font-bold">Neighborhood:</span> Shimanzi</p>
+        <br>
+        <p class="text-gray-700 mb-1">Amenities:</p>
+        <ul><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            <li><i class="fa fa-tint" aria-hidden="true"> Adequate water</i></li>
+            <li><i class="fa-solid fa-wifi"> Wi-Fi provider</i></li>
+            <li><i class="fa-solid fa-sink"> Kitchenette</i></li>
+            <li><i class="fa-solid fa-bath"> Private bathroom</i></li>
+            <li><i class="fa-solid fa-trash"> Weekly garbage collection</i></li>
+        </ul>
+    </div>
+</div>
+<div id="modal-1" class="modal fixed inset-0 z-50 bg-black bg-opacity-50 hidden justify-center items-center p-4">
+    <div class="bg-white rounded-lg p-6 relative max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800 z-10">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h3 class="font-semibold text-lg mb-2">Bedsitter in Mikindani</h3>
+        <img src="images/1br.jpg" alt="Bedsitter in Mikindani" class="rounded mb-2 w-full object-cover">
+        <p class="text-gray-700 mb-1">Price: Ksh 1,500/month</p>
+        <p class="text-gray-700 mb-1">Availability: Immediate</p>
+        <p class="text-gray-700 mb-4"><span class="font-bold">Neighborhood:</span> Mikindani</p>
+        
+        <p class="text-gray-700 mb-1 font-semibold">Amenities:</p>
+        <ul class="list-none space-y-1 text-gray-700">
+            <li><i class="fa fa-tint w-5 mr-2 text-blue-500" aria-hidden="true"></i> Adequate water</li>
+            <li><i class="fa-solid fa-wifi w-5 mr-2 text-blue-500"></i> Wi-Fi provider</li>
+            <li><i class="fa-solid fa-sink w-5 mr-2 text-gray-600"></i> Kitchenette</li>
+            <li><i class="fa-solid fa-bath w-5 mr-2 text-gray-600"></i> Private bathroom</li>
+            <li><i class="fa-solid fa-trash w-5 mr-2 text-green-600"></i> Weekly garbage collection</li>
+        </ul>
+    </div>
+</div>
 
-        openModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const modalId = button.dataset.modalId;
-                const modal = document.getElementById(modalId);
-                modal.classList.remove('hidden');
-            });
+<!-- Modal 2: One bedroom in Makupa -->
+<div id="modal-2" class="modal fixed inset-0 z-50 bg-black bg-opacity-50 hidden justify-center items-center p-4">
+    <div class="bg-white rounded-lg p-6 relative max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800 z-10">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h3 class="font-semibold text-lg mb-2">One bedroom in Makupa</h3>
+        <img src="images/2br.jpeg" alt="One bedroom in Makupa" class="rounded mb-2 w-full object-cover">
+        <p class="text-gray-700 mb-1">Price: Ksh 4,500/month</p>
+        <p class="text-gray-700 mb-1">Availability: Immediate</p>
+        <p class="text-gray-700 mb-4"><span class="font-bold">Neighborhood:</span> Makupa</p>
+
+        <p class="text-gray-700 mb-1 font-semibold">Amenities:</p>
+        <ul class="list-none space-y-1 text-gray-700">
+           <li><i class="fa fa-tint w-5 mr-2 text-blue-500" aria-hidden="true"></i> Adequate water</li>
+           <li><i class="fa-solid fa-wifi w-5 mr-2 text-blue-500"></i> Wi-Fi provider</li>
+           <li><i class="fa-solid fa-sink w-5 mr-2 text-gray-600"></i> Kitchenette</li>
+           <li><i class="fa-solid fa-bath w-5 mr-2 text-gray-600"></i> Private bathroom</li>
+           <li><i class="fa-solid fa-trash w-5 mr-2 text-green-600"></i> Weekly garbage collection</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Modal 3: Shared room in Kibokoni -->
+<div id="modal-3" class="modal fixed inset-0 z-50 bg-black bg-opacity-50 hidden justify-center items-center p-4">
+    <div class="bg-white rounded-lg p-6 relative max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <button class="closeModal absolute top-2 right-2 text-gray-600 hover:text-gray-800 z-10">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h3 class="font-semibold text-lg mb-2">Shared room in Kibokoni</h3>
+        <!-- Corrected alt text -->
+        <img src="images/1br.jpg" alt="Shared room in Kibokoni" class="rounded mb-2 w-full object-cover">
+        <p class="text-gray-700 mb-1">Price: Ksh 800/month</p>
+        <p class="text-gray-700 mb-1">Availability: Immediate</p>
+        <p class="text-gray-700 mb-4"><span class="font-bold">Neighborhood:</span> Kibokoni</p>
+
+        <p class="text-gray-700 mb-1 font-semibold">Amenities:</p>
+        <ul class="list-none space-y-1 text-gray-700">
+           <li><i class="fa fa-tint w-5 mr-2 text-blue-500" aria-hidden="true"></i> Adequate water</li>
+           <li><i class="fa-solid fa-wifi w-5 mr-2 text-blue-500"></i> Wi-Fi provider</li>
+           <li><i class="fa-solid fa-sink w-5 mr-2 text-gray-600"></i> Kitchenette</li>
+           <li><i class="fa-solid fa-bath w-5 mr-2 text-gray-600"></i> Private bathroom</li>
+           <li><i class="fa-solid fa-trash w-5 mr-2 text-green-600"></i> Weekly garbage collection</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const openModalButtons = document.querySelectorAll('.openModal');
+    const closeModalButtons = document.querySelectorAll('.closeModal');
+    const modals = document.querySelectorAll('.modal');
+
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.dataset.modalId;
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
         });
+    });
 
-        closeModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const modal = button.closest('.modal');
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal');
+            modal.classList.add('hidden');
+        });
+    });
+
+    window.addEventListener('click', (event) => {
+        modals.forEach(modal => {
+            if (event.target === modal) {
                 modal.classList.add('hidden');
-            });
+            }
         });
+    });
+</script>
 
-        window.addEventListener('click', (event) => {
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.classList.add('hidden');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
